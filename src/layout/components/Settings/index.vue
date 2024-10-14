@@ -110,12 +110,10 @@ function themeChange(val) {
   settingsStore.theme = val;
   handleThemeStyle(val);
 }
-
 function handleTheme(val) {
   settingsStore.sideTheme = val;
   sideTheme.value = val;
 }
-
 function saveSetting() {
   proxy.$modal.loading("正在保存到本地，请稍候...");
   let layoutSetting = {
@@ -130,13 +128,11 @@ function saveSetting() {
   localStorage.setItem("layout-setting", JSON.stringify(layoutSetting));
   setTimeout(proxy.$modal.closeLoading(), 1000)
 }
-
 function resetSetting() {
   proxy.$modal.loading("正在清除设置缓存并刷新，请稍候...");
   localStorage.removeItem("layout-setting")
   setTimeout("window.location.reload()", 1000)
 }
-
 function openSetting() {
   showSettings.value = true;
 }
